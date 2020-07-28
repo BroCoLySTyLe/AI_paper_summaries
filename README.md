@@ -1,6 +1,7 @@
 # SBERT summary
 ## SBERT로 해결한 문제와 원리
-SBERT는 기존의 BERT와 RoBERTa를 가지고 Semantic Textual Similarity와 같은 sentence-pair regression task의 computational overhead를 극복하기위해 ***siamese network*** 라는 특별한 network 구조를 가지고 학습하여 효율적인 Sentence Embedding을 할 수 있도록 만든 모델입니다.
+
+[SBERT](https://arxiv.org/pdf/1908.10084.pdf)는 기존의 BERT와 RoBERTa를 가지고 Semantic Textual Similarity와 같은 sentence-pair regression task의 computational overhead를 극복하기위해 ***siamese network*** 라는 특별한 network 구조를 가지고 학습하여 효율적인 Sentence Embedding을 할 수 있도록 만든 모델입니다.
 
 기존의 BERT를 이용하여 두 문장의 Similarity를 구해야 할 경우 10000문장(n=10000)의 Similarity를 구하기 위해서는 10000문장의 combination(n=10000, n*(n-1)/2 =49995000)만큼의 inference를 해야하기 때문에 굉장히 overhead가 큽니다. V100 GPU 환경에서 이와 같이 BERT를 이용하여 10000문장에서 모든 문장간 Similarity를 구할경우 65시간정도가 걸리는데, SBERT를 이용하면 BERT를 이용하여 inference를 하는 정확도를 유지하면서 5초만에 모든 문장간 Similarity를 구할 수 있습니다.
 
