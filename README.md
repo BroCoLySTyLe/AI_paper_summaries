@@ -1,2 +1,2 @@
-# AI_paper_summaries
-Artificial Intelligence Paper Summaries For Study
+# SBERT summary
+SBERT는 ㄴㅇㄴㅇ
